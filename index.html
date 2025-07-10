@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1><img src="pngwing.com.png" width="150" height="170" alt="Snake"> Snake Game</h1>
+
+    <!-- Mode Selection -->
+    <div id="modeSelector">
+      <label for="difficulty">Select Mode:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <button onclick="startGame()">Start Game</button>
+
+      <!-- Show high/least score -->
+      <div id="homeScores">
+        <p>🏆 Highest Score: <span id="maxScoreHome">0</span></p>
+        <p>🐢 Least Score: <span id="minScoreHome">0</span></p>
+      </div>
+    </div>
+
+    <!-- Score Panel -->
+    <div class="score-panel" id="scorePanel" style="display:none;">
+      <span>Score: <span id="score">0</span></span>
+      <span>High Score: <span id="highScore">0</span></span>
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="gameCanvas" width="400" height="400" style="display:none;"></canvas>
+
+    <!-- Controls -->
+    <div class="controls" id="controls" style="display:none;">
+      <button id="restartBtn">Restart</button>
+      <button id="homeBtn">Home</button>
+      <button id="soundToggleBtn">🔊 Sound On</button>
+    </div>
+  </div>
+
+  <!-- Sound Effects -->
+  <audio id="eatSound" src="eat.mp3" preload="auto"></audio>
+  <audio id="gameOverSound" src="gameover.mp3" preload="auto"></audio>
+  <audio id="startSound" src="start.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
